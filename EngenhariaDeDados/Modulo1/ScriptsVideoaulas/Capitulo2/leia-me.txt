@@ -1,0 +1,9 @@
+
+Ferramentas Online para modelagem:
+https://creately.com/pt/lp/ferramenta-de-diagrama-er-online/
+https://www.lucidchart.com/pages/pt/exemplos/diagrama-entidade-relacionamento-online
+
+Ferramenta para desktop para modelagem: brModelo
+
+Site do projeto: http://www.sis4.com/brModelo/
+Download: http://www.sis4.com/brModelo/download.html
