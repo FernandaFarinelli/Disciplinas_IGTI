@@ -1,0 +1,15 @@
+tempo,temperatura,umidade,vento,jogartenis
+ensolarado,85,85,FALSE,não
+ensolarado,80,90,TRUE,não
+nublado,83,86,FALSE,sim
+chuvoso,70,96,FALSE,sim
+chuvoso,68,80,FALSE,sim
+chuvoso,65,70,TRUE,não
+nublado,64,65,TRUE,sim
+ensolarado,72,95,FALSE,não
+ensolarado,69,70,FALSE,sim
+chuvoso,75,80,FALSE,sim
+ensolarado,75,70,TRUE,sim
+nublado,72,90,TRUE,sim
+nublado,81,75,FALSE,sim
+chuvoso,71,91,TRUE,não
