@@ -1,0 +1,14 @@
+@professoraigti Dizem por aí, mas não tenho certeza, que meu sorriso fica mais feliz quando te vejo, dizem também que meus olhos brilham, dizem também que é amor, mas isso sim é certeza. Dom Casmurro. @machadodeassis #domcasmurro #machadodeassis https://www.igti.com.br/
+Mas a saudade é isto mesmo; é o passar e repassar das memórias antigas. Dom Casmurro.
+E com uma letra bem pequena, lá estava escrito no seu epitáfio: Tentou ser, não conseguiu; tentou ter, não possuiu; tentou continuar, não prosseguiu; e nessa vida de expectativas frustradas tentou até amar… Pois bem, não conseguiu, e aqui está. Dom Casmurro.
+O que é o Stemming?
+A linguagem natural possui diversas formas para flexionar uma palavra para que ela caiba em uma frase. É claro que essas características são determinadas de acordo com a língua que você estará utilizando.    Pense por exemplo no verbo andar:   Andei – Ande – Andarei – Andamento, Andando – Andante…
+Exemplo: Fonte: https://www.computersciencemaster.com.br/como-reduzir-uma-palavra-ao-seu-radical-em-python-stemming/ #stemming
+O processo de stemização (do inglês, stemming) consiste em reduzir uma palavra ao seu radical. A palavra “meninas” se reduziria a “menin”, assim como “meninos” e “menininhos”. As palavras “gato”, “gata”, “gatos” e “gatas” reduziriam-se para “gat”. A lematização reduz a palavra ao seu lema, que é a forma no masculino e singular.
+No caso de verbos, o lema é o infinitivo. Por exemplo, as palavras “gato”, “gata”, “gatos” e “gatas” são todas formas do mesmo lema: “gato”. Igualmente, as palavras “tiver”, “tenho”, “tinha”, “tem” são formas do mesmo lema “ter”. A vantagem de aplicar a stemização ou lematização é clara: redução de vocabulário e abstração de significado.   Esses pré-processamentos são de cunho morfossintático, que atuam em cima de itens lexicais, ou seja, palavras.
+O que é lematização?
+A lematização é o processo, efetivamente, de deflexionar uma palavra para determinar o seu lema (as flexões chamam-se lexemas). Por exemplo, as palavras gato, gata, gatos, gatas são todas formas do mesmo lema: gato. Igualmente, as palavras tiver, tenho, tinha, tem são do mesmo lema ter. E bom, melhor e ótimo são lexemas do lema bom. 
+Exemplo: #exemplolematização Fonte: https://www.computersciencemaster.com.br/como-reduzir-uma-palavra-para-sua-forma-basica-em-python-lemmatizacao/ #lemma
+Lematização versus Stemming
+As duas técnicas possuem o mesmo objetivo de inflexionar uma palavra, no entanto, os outputs de uma mesma palavra são diferentes. O stemming não se importa com a legibilidade da palavra gerada como output. Já a lematização resulta em uma palavra no infinitivo (geralmente – não obrigatóriamente).   
+  
