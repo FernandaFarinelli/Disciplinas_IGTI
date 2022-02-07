@@ -1,0 +1,29 @@
+OBSERVAÇÃO: Você precisa alterar os caminhos dos arquivos para a sua configuração do S3
+
+copy igti.users from 's3://myigtibucket/allusers_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '|' region 'sa-east-1';
+
+copy venue  from 's3://myigtibucket/venue_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '|' region 'sa-east-1';
+
+copy category from 's3://myigtibucket/category_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '|' region 'sa-east-1';
+
+copy date from 's3://myigtibucket/date2008_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '|' region 'sa-east-1';
+
+copy event from 's3://myigtibucket/allevents_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '|' timeformat 'YYYY-MM-DD HH:MI:SS' region  'sa-east-1';
+
+copy listing from 's3://myigtibucket/listings_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '|' region 'sa-east-1';
+
+copy sales from 's3://myigtibucket/sales_tab_pipe.txt'
+credentials 'aws_iam_role=arn:aws:iam::040517126862:role/myRedshiftRole' 
+delimiter '\t' timeformat 'auto' region  'sa-east-1';
