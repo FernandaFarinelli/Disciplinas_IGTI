@@ -1,0 +1,9 @@
+
+1) Nestas planilhas temos um conjunto de dados diferentes que vocês devem utilizar para carregar suas tabelas.
+
+Vocês devem gerar os comandos de inserção conforme o modelo de dados que vocês criaram. 
+
+Para isso, usem como referência a aula sobre linguagem de manipulação de dados do capítulo 3.
+
+Os dados faltantes nas planilhas vocês devem criar.
+
