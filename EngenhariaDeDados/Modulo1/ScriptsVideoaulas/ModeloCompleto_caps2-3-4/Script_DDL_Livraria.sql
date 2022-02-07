@@ -23,9 +23,7 @@ CREATE TABLE IF NOT EXISTS `livraria`.`autor` (
   `email` VARCHAR(50) NULL DEFAULT NULL,
   `paisnascimento` VARCHAR(50) NULL DEFAULT NULL,
   `biografia` TEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`idautor`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  PRIMARY KEY (`idautor`));
 
 
 -- -----------------------------------------------------
@@ -37,9 +35,7 @@ CREATE TABLE IF NOT EXISTS `livraria`.`estado` (
   `sigla_estado` CHAR(2) NOT NULL,
   `regiao` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`codigo_estado_ibge`),
-  UNIQUE INDEX `sigla_idx` (`sigla_estado` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  UNIQUE INDEX `sigla_idx` (`sigla_estado` ASC));
 
 
 -- -----------------------------------------------------
@@ -51,15 +47,14 @@ CREATE TABLE IF NOT EXISTS `livraria`.`cidade` (
   `nome_cidade` VARCHAR(150) NOT NULL,
   `codigo_estado_ibge` INT NOT NULL,
   PRIMARY KEY (`codigo_cidade`),
-  INDEX `codigo_cidade_ibge_idx` (`codigo_cidade_ibge` ASC) VISIBLE,
-  INDEX `fk_cidade_estado_idx` (`codigo_estado_ibge` ASC) VISIBLE,
+  INDEX `codigo_cidade_ibge_idx` (`codigo_cidade_ibge` ASC) ,
+  INDEX `fk_cidade_estado_idx` (`codigo_estado_ibge` ASC) ,
   CONSTRAINT `fk_cidade_estado`
     FOREIGN KEY (`codigo_estado_ibge`)
     REFERENCES `livraria`.`estado` (`codigo_estado_ibge`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+;
 
 
 -- -----------------------------------------------------
@@ -71,15 +66,12 @@ CREATE TABLE IF NOT EXISTS `livraria`.`editora` (
   `telefone` VARCHAR(15) NULL DEFAULT NULL,
   `codigo_cidade` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`codigo_editora`),
-  INDEX `fk_editora_cidade1_idx` (`codigo_cidade` ASC) VISIBLE,
+  INDEX `fk_editora_cidade1_idx` (`codigo_cidade` ASC) ,
   CONSTRAINT `fk_editora_cidade1`
     FOREIGN KEY (`codigo_cidade`)
     REFERENCES `livraria`.`cidade` (`codigo_cidade`)
     ON DELETE RESTRICT
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-AUTO_INCREMENT = 13
-DEFAULT CHARACTER SET = utf8;
+    ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
@@ -88,9 +80,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `livraria`.`genero` (
   `idgenero` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`idgenero`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  PRIMARY KEY (`idgenero`));
 
 
 -- -----------------------------------------------------
@@ -106,8 +96,8 @@ CREATE TABLE IF NOT EXISTS `livraria`.`livro` (
   `idgenero` INT NULL DEFAULT NULL,
   `preco` FLOAT NULL DEFAULT NULL,
   PRIMARY KEY (`id_livro`),
-  INDEX `fk_livro_editora1_idx` (`codigo_editora` ASC) VISIBLE,
-  INDEX `fk_livro_genero` (`idgenero` ASC) VISIBLE,
+  INDEX `fk_livro_editora1_idx` (`codigo_editora` ASC) ,
+  INDEX `fk_livro_genero` (`idgenero` ASC) ,
   CONSTRAINT `fk_livro_editora1`
     FOREIGN KEY (`codigo_editora`)
     REFERENCES `livraria`.`editora` (`codigo_editora`)
@@ -115,9 +105,7 @@ CREATE TABLE IF NOT EXISTS `livraria`.`livro` (
     ON UPDATE CASCADE,
   CONSTRAINT `fk_livro_genero`
     FOREIGN KEY (`idgenero`)
-    REFERENCES `livraria`.`genero` (`idgenero`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+    REFERENCES `livraria`.`genero` (`idgenero`));
 
 
 -- -----------------------------------------------------
@@ -127,16 +115,14 @@ CREATE TABLE IF NOT EXISTS `livraria`.`autoria` (
   `id_livro` INT NOT NULL,
   `idautor` INT NOT NULL,
   PRIMARY KEY (`id_livro`, `idautor`),
-  INDEX `fk_autoria_autor` (`idautor` ASC) VISIBLE,
-  INDEX `fk_autoria_livro` (`id_livro` ASC) VISIBLE,
+  INDEX `fk_autoria_autor` (`idautor` ASC) ,
+  INDEX `fk_autoria_livro` (`id_livro` ASC) ,
   CONSTRAINT `fk_autoria_autor`
     FOREIGN KEY (`idautor`)
     REFERENCES `livraria`.`autor` (`idautor`),
   CONSTRAINT `fk_autoria_livro`
     FOREIGN KEY (`id_livro`)
-    REFERENCES `livraria`.`livro` (`id_livro`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+    REFERENCES `livraria`.`livro` (`id_livro`));
 
 
 -- -----------------------------------------------------
@@ -152,14 +138,12 @@ CREATE TABLE IF NOT EXISTS `livraria`.`cliente` (
   `cidade` VARCHAR(45) NULL DEFAULT NULL,
   `cpfcliente` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`idcliente`),
-  UNIQUE INDEX `CPF_UNIQUE` (`cpfcliente` ASC) VISIBLE,
-  INDEX `fk_cliente_cidade` (`cidade` ASC) VISIBLE,
-  INDEX `cliente_DataCadastro_idx` (`datacadastro` ASC) VISIBLE,
+  UNIQUE INDEX `CPF_UNIQUE` (`cpfcliente` ASC) ,
+  INDEX `fk_cliente_cidade` (`cidade` ASC) ,
+  INDEX `cliente_DataCadastro_idx` (`datacadastro` ASC) ,
   CONSTRAINT `fk_cliente_cidade`
     FOREIGN KEY (`cidade`)
-    REFERENCES `livraria`.`cidade` (`codigo_cidade`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+    REFERENCES `livraria`.`cidade` (`codigo_cidade`));
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
