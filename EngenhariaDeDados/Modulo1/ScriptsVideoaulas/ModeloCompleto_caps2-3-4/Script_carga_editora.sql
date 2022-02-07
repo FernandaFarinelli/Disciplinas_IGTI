@@ -2,6 +2,8 @@
 Script prática linguagem DML
 Curso bootcamp de Engenheiro de Dados IGTI
 Professora: Fernanda Farinelli
+Observação: No caso da tabela Editora, como o campo `codigo_editora` é definido como auto-incremento, não seria necessário informar na inserção.
+Isto foi feito neste script somente para demosntrar as possibilidades de comandos INSERT e para garantir que os dados de todas as tabelas fiquem integros.
 */
 
 -- Inserir e Update dados
