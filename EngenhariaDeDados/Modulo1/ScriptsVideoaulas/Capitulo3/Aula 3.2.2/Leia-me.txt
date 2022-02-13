@@ -1,0 +1,7 @@
+O modelo criado na atividade 2.8.2 esta um pouco diferente do modelo apresentado na aula 3.2.2.
+
+Note que no modelo da aula 2.8.2, temos uma tabela Edicao entre Editora e Livro.
+O script disponibilizado aqui no GitHub já foi adaptado para refletir o modelo da aula 2.8.2.
+Desta forma, na aula 3.2.2, próximo ao minuto 14:40 é realizado um comando ALTER TABLE na tabela livro para incluir as colunas idioma, idgenero, e preco, além do índice fk_livro_genero.
+
+O script disponibilizado esta um pouco diferente do apresentado na videoaula, mas todas as adaptações realizadas foram comentadas no script.
